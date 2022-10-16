@@ -35,3 +35,20 @@ def get_entry(title):
         return f.read().decode("utf-8")
     except FileNotFoundError:
         return None
+
+def del_entry(title):
+
+    filename = f"entries/{title}.md"
+    if default_storage.exists(filename):
+        default_storage.delete(filename)
+    else:
+        return None
+    
+
+def related(name):
+    rel = []
+
+    for entry_name in list_entries():
+        if name.lower() in entry_name.lower() or entry_name.lower() in name.lower():
+            rel.append(entry_name)
+    return rel
