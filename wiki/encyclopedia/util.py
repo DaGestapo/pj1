@@ -45,7 +45,7 @@ def del_entry(title):
         return None
     
 
-def related(name):
+def rel_entry(name):
     rel = []
 
     for entry_name in list_entries():

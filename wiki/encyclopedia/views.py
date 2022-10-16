@@ -109,7 +109,7 @@ def search(request, name):
         
         entries = util.list_entries()
         
-        entries = util.related(name)
+        entries = util.rel_entry(name)
         
         return render(request, "encyclopedia/search.html", {
             "name": name,
